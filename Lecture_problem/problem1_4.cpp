@@ -31,8 +31,29 @@ void reorder_students(Node* head, int len)
     a->next = previous; 
 }
 int main()
-{
+{   
+    Node* head = new Node();
+    head->value = 0;
+    head->next = nullptr;
+    Node* current = head;
 
-    
-
+    for (int i = 1; i < 10; i ++)
+    {
+        Node* new_node = new Node();
+        new_node->value = i;
+        new_node->next = nullptr;
+        current->next = new_node;
+        current = new_node;
+    }
+    // while(head != nullptr)
+    // {
+    //     std::cout << head->value << " ";
+    //     head = head->next;
+    // }
+    reorder_students(head, 10);
+    while(head != nullptr)
+    {
+        std::cout << head->value << " ";
+        head = head->next;
+    }
 }
